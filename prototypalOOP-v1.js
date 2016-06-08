@@ -31,7 +31,7 @@ luke.instrument = "Guitar";
 
 // call functions
 john.sayName();
-bobby.sayName();
+bobby.shoutName();
 luke.sayName();
 luke.shoutName();
 luke.getInstrument();

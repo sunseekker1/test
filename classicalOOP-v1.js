@@ -10,9 +10,11 @@ Person.prototype.shoutName = function (){
 };
 
 // class Musician
-var Musician = function (name, instrument){
+var Musician = function (name, instrument, age){
     Person.call(this, name);
+
     this.instrument = instrument;
+    var privateAge = age;
 };
 Musician.prototype = Object.create(Person.prototype); // extend class Person
 Musician.prototype.constructor = Musician; // extend class Person // braucht es diesen Code?
@@ -31,7 +33,7 @@ var luke = new Musician("Luke Musician", "Guitar");
 
 // call functions
 john.sayName();
-bobby.sayName();
+bobby.shoutName();
 luke.sayName();
 luke.shoutName();
 luke.getInstrument();

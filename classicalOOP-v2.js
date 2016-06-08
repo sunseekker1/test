@@ -27,6 +27,7 @@ var Musician = function (name, instrument){
     Musician.super_.call(this, name);
 
     this.instrument = instrument;
+
 };
 inherits(Musician, Person); // extend class Person
 
@@ -41,11 +42,11 @@ Musician.prototype.getInstrument = function (){
 // create intances
 var john = new Person("John Person");
 var bobby = new Person("Bobby Person");
-var luke = new Musician("Luke Musician", "Guitar");
+var luke = new Musician("Luke Musician", "Guitar", 39);
 
 // call functions
 john.sayName();
-bobby.sayName();
+bobby.shoutName();
 luke.sayName();
 luke.shoutName();
 luke.getInstrument();
