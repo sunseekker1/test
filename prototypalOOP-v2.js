@@ -10,6 +10,9 @@ var Person = {
     },
     sayName: function (){
         console.log("Person.sayName(): ", this.name);
+    },
+    shoutName: function (){
+        console.log("Person.shoutName(): ", this.name);
     }
 };
 
@@ -17,18 +20,22 @@ var Person = {
 var Musician = Person.create({
     getInstrument: function (){
         console.log("Musician.getInstrument()", this.instrument);
+    },
+    shoutName: function (){
+        console.log("Musician.shoutName()", this.name);
     }
 });
 
 // create intances
-var john = Person.create({name: "John"});
-var bobby = Person.create({name: "Bobby"});
-var luke = Musician.create({name: "Luke", instrument: "Guitar2"});
+var john = Person.create({name: "John Person"});
+var bobby = Person.create({name: "Bobby Person"});
+var luke = Musician.create({name: "Luke Musician", instrument: "Guitar"});
 
 // call functions
+john.sayName();
 bobby.sayName();
 luke.sayName();
+luke.shoutName();
 luke.getInstrument();
 
-console.log(bobby);
 

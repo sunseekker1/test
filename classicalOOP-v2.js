@@ -18,6 +18,9 @@ var Person = function (name){
 Person.prototype.sayName = function (){
     console.log("Person.sayName(): ", this.name);
 };
+Person.prototype.shoutName = function (){
+    console.log("Person.shoutName(): ", this.name);
+};
 
 // class Musician
 var Musician = function (name, instrument){
@@ -27,21 +30,22 @@ var Musician = function (name, instrument){
 };
 inherits(Musician, Person); // extend class Person
 
-Musician.prototype.sayName = function (){
+Musician.prototype.shoutName = function (){
     //Person.prototype.sayName.call(this);
-    console.log("Musician.sayName(): ", this.name);
+    console.log("Musician.shoutName(): ", this.name);
 };
 Musician.prototype.getInstrument = function (){
     console.log("Musician.getInstrument()", this.instrument);
 };
 
 // create intances
-var john = new Person("John");
-var bobby = new Person("Bobby");
-var luke = new Musician("Luke", "Guitar");
+var john = new Person("John Person");
+var bobby = new Person("Bobby Person");
+var luke = new Musician("Luke Musician", "Guitar");
 
 // call functions
 john.sayName();
 bobby.sayName();
 luke.sayName();
+luke.shoutName();
 luke.getInstrument();

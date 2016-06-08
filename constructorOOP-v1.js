@@ -1,35 +1,41 @@
 // class Person
-var Person = function (name){
+var Person = function (name) {
     this.name = name;
+};
 
-    this.sayName = function (){
+Person.prototype = {
+    constructor: Person,
+    sayName: function ()  {
         console.log("Person.sayName(): ", this.name);
-    };
-
-    this.shoutName = function (){
+    },
+    shoutName: function ()  {
         console.log("Person.shoutName(): ", this.name);
-    };
+    }
 };
 
 // class Musician
 var Musician = function (name, instrument){
     Person.call(this, name);
     this.instrument = instrument;
-
-    this.getInstrument = function (){
-        console.log("Musician.getInstrument()", this.instrument);
-    };
-
-    this.shoutName = function (){
-        console.log("Musician.shoutName()", this.instrument);
-    };
 };
-Musician.prototype = new Person(); // extend class Person
+Musician.prototype = Object.create(Person.prototype); // extend class Person
+Musician.prototype = {
+    constructor: Musician,
+    getInstrument: function ()  {
+        console.log("Musician.getInstrument()", this.instrument);
+    },
+    shoutName: function ()  {
+        //Person.prototype.sayName.call(this);
+        console.log("Musician.shoutName(): ", this.name);
+    },
+};
+
 
 // create intances
 var john = new Person("John Person");
 var bobby = new Person("Bobby Person");
 var luke = new Musician("Luke Musician", "Guitar");
+
 
 // call functions
 john.sayName();
@@ -37,4 +43,3 @@ bobby.sayName();
 luke.sayName();
 luke.shoutName();
 luke.getInstrument();
-
