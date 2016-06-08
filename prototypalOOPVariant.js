@@ -12,7 +12,7 @@
             return instance;
         },
         sayName: function (){
-            console.log(this.name, "Person.sayName()");
+            console.log(this.name, " Person.sayName()");
         }
     };
 
