@@ -23,7 +23,7 @@ Musician = function (name, instrument, age){
     this.instrument = instrument;
 
     // Private
-    var privateAge = age;
+    var _age = age;
 
     //Public
     this.getInstrument = function (){
@@ -37,12 +37,12 @@ Musician = function (name, instrument, age){
 
     //Public
     this.getAge = function (){
-        privateGetAge();
+        _getAge();
     };
 
     // Private
-    var privateGetAge = function (){
-        console.log("Musician.privateGetAge()", privateAge);
+    var _getAge = function (){
+        console.log("Musician.privateGetAge()", _age);
     };
 };
 Musician.prototype = new Person(); // extend class Person
