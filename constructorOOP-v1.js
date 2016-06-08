@@ -18,7 +18,7 @@ var Musician = function (name, instrument){
     Person.call(this, name);
     this.instrument = instrument;
 };
-Musician.prototype = Object.create(Person.prototype); // extend class Person
+//Musician.prototype = Object.create(Person.prototype); // extend class Person
 Musician.prototype = {
     constructor: Musician,
     getInstrument: function ()  {

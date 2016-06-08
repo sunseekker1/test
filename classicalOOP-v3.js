@@ -21,7 +21,7 @@ var Musician = function (name, instrument){
     };
 
     this.shoutName = function (){
-        console.log("Musician.shoutName()", this.instrument);
+        console.log("Musician.shoutName()", this.name);
     };
 };
 Musician.prototype = new Person(); // extend class Person
