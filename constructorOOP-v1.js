@@ -27,7 +27,7 @@ Musician.prototype = {
     shoutName: function ()  {
         //Person.prototype.sayName.call(this);
         console.log("Musician.shoutName(): ", this.name);
-    },
+    }
 };
 
 
@@ -40,6 +40,6 @@ var luke = new Musician("Luke Musician", "Guitar");
 // call functions
 john.sayName();
 bobby.shoutName();
-luke.sayName();
+//luke.sayName();
 luke.shoutName();
 luke.getInstrument();
